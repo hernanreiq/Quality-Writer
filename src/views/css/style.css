@@ -20,7 +20,23 @@ header {
   background-color: rgb(65, 65, 65);
 }
 
+.card-header-main, aside .card-header {
+  background-color: #df691a;
+}
+
+.card-body-main {
+  background-color: rgb(65, 65, 65) !important;
+}
+
 .card {
+  border-radius: 5px;
+}
+
+.badge-url:hover {
+  color: #1e1e1e !important;
+}
+
+.badge {
   border-radius: 5px;
 }
 
@@ -36,10 +52,18 @@ footer p, .card-body {
   font-family: 'Permanent Marker', cursive;
 }
 
-.font-play, h1, footer p, .card-body  {
+.font-play, h1, footer p, .card-body {
   font-family: 'Play', sans-serif;
 }
 
-.font-Suez-one, .navbar-brand, .nav-link {
+.font-Suez-one, .navbar-brand, .nav-link, .card-title-article  {
   font-family: 'Suez One', serif;
+}
+
+.orange-division {
+  background-color: #df691a;
+  background-image: -moz-linear-gradient(left, #552030, #df691a, #552030);
+  background-image: -webkit-linear-gradient(left, #552030, #df691a, #552030);
+  background-image: linear-gradient(to right, #552030, #df691a, #552030);
+  height: 3px;
 }

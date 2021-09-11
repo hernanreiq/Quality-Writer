@@ -4,17 +4,17 @@ class Aside extends Component {
     render(){
         return(
             <React.Fragment>
-                <aside className="p-3">
+                <aside>
                     <div className="card shadow">
                         <div className="card-header">
-                            <h2 className="card-title mb-1 text-center">Topics</h2>
+                            <h2 className="card-title mb-1">Topics</h2>
                         </div>
                         <div className="card-body">
                             <ul>
-                                <li><a href="/sciences">Sciences</a></li>
+                                <li><a href="/science">Science</a></li>
                             </ul>
                             <ul>
-                                <li><a href="/technologies">Technologies</a></li>
+                                <li><a href="/technology">Technology</a></li>
                             </ul>
                             <ul>
                                 <li><a href="/business">Business</a></li>
@@ -23,7 +23,7 @@ class Aside extends Component {
                                 <li><a href="/cinema">Cinema</a></li>
                             </ul>
                             <ul>
-                                <li><a href="/curiosities">Curiosities</a></li>
+                                <li><a href="/entertainment">Entertainment</a></li>
                             </ul>
                         </div>
                     </div>
