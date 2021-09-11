@@ -1,14 +1,24 @@
 import React, { Component } from "react";
+import Footer from "./partials/footer";
+import Aside from "./partials/aside";
 
 class Index extends Component {
-    render(){
-        return(
+    render() {
+        return (
             <React.Fragment>
-                <main>
-                    <div className="container p-4">
-                        <h1>Index</h1>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-8">
+                            <main className="p-4">
+                                <h1>Index</h1>
+                            </main>
+                        </div>
+                        <div className="col-md-4">
+                            <Aside />
+                        </div>
                     </div>
-                </main>
+                </div>
+                <Footer />
             </React.Fragment>
         )
     }

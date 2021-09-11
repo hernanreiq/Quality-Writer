@@ -7,6 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #552030;
 }
 
 code {
@@ -14,11 +15,28 @@ code {
     monospace;
 }
 
-.font-permant-marker {
+header {
+  height: 400px;
+  background-color: rgb(65, 65, 65);
+}
+
+.card {
+  border-radius: 5px;
+}
+
+footer, .card-body {
+  background-color: #1e1e1e;
+}
+
+footer p, .card-body {
+  letter-spacing: 1px;
+}
+
+.font-permant-marker, .card-title {
   font-family: 'Permanent Marker', cursive;
 }
 
-.font-play  {
+.font-play, h1, footer p, .card-body  {
   font-family: 'Play', sans-serif;
 }
 

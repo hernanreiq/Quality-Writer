@@ -5,7 +5,7 @@ class Nav extends Component {
     render() {
         return (
             <React.Fragment>
-                <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+                <nav className="navbar navbar-expand-lg navbar-dark bg-primary shadow">
                     <div className="container">
                         <NavLink to="/home-error" className="navbar-brand"><i>Quality Writer</i></NavLink>
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
