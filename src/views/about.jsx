@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 
-class Index extends Component {
+class About extends Component {
     render(){
         return(
             <React.Fragment>
                 <main>
                     <div className="container p-4">
-                        <h1>Index</h1>
+                        <h1>About this app</h1>
                     </div>
                 </main>
             </React.Fragment>
@@ -14,4 +14,4 @@ class Index extends Component {
     }
 }
 
-export default Index;
+export default About;
