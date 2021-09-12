@@ -35,7 +35,6 @@ class Index extends Component {
     render() {
         return (
             <React.Fragment>
-                <div className="orange-division"></div>
                 <div className="container my-5">
                     <div className="row">
                         <div className="col-md-8 p-3">
@@ -60,7 +59,6 @@ class Index extends Component {
                                                 )
                                             })
                                         }
-
                                     </div>
                                 </div>
                             </main>

@@ -9,6 +9,7 @@ class Header extends Component {
                         <h1 className="display-5 text-center">New content every day, all the time!</h1>
                     </div>
                 </header>
+                <div className="orange-division"></div>
             </React.Fragment>
         )
     }

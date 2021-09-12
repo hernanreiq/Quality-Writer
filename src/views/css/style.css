@@ -52,7 +52,7 @@ footer p, .card-body {
   font-family: 'Permanent Marker', cursive;
 }
 
-.font-play, h1, footer p, .card-body {
+.font-play, h1, footer p, .card-body, .btn {
   font-family: 'Play', sans-serif;
 }
 
@@ -66,4 +66,8 @@ footer p, .card-body {
   background-image: -webkit-linear-gradient(left, #552030, #df691a, #552030);
   background-image: linear-gradient(to right, #552030, #df691a, #552030);
   height: 3px;
+}
+
+.btn {
+  border-radius: 10px;
 }
