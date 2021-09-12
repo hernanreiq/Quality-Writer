@@ -9,7 +9,7 @@ class About extends Component {
                 <main className="container p-4">
                     <div className="row">
                         <div className="col-md-6 offset-md-3 my-5">
-                            <div className="card">
+                            <div className="card shadow">
                                 <div className="card-header-main card-header">
                                     <h2 className="card-title mb-0">
                                         About this app

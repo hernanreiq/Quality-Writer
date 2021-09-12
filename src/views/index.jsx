@@ -68,7 +68,6 @@ class Index extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="orange-division"></div>
                 <Footer />
             </React.Fragment>
         )
