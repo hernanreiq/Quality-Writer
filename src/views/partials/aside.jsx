@@ -5,7 +5,7 @@ class Aside extends Component {
         return(
             <React.Fragment>
                 <aside>
-                    <div className="card shadow">
+                    <div className="card shadow mb-5">
                         <div className="card-header">
                             <h2 className="card-title mb-1">Topics</h2>
                         </div>
@@ -25,6 +25,17 @@ class Aside extends Component {
                             <ul>
                                 <li><a href="/entertainment">Entertainment</a></li>
                             </ul>
+                        </div>
+                    </div>
+                    <div className="card shadow mb-5">
+                        <div className="card-header">
+                            <h2 className="card-title mb-1">CRUD</h2>
+                        </div>
+                        <div className="card-body">
+                            <a href="/crud/create" className="btn btn-success w-100 my-2">Create a new post</a>
+                            <a href="/crud/read" className="btn btn-info w-100 my-2">View all posts</a>
+                            <a href="/crud/update" className="btn btn-primary w-100 my-2">Update a post</a>
+                            <a href="/crud/delete" className="btn btn-danger w-100 my-2">Delete a post</a>
                         </div>
                     </div>
                 </aside>
