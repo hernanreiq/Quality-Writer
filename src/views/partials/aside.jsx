@@ -32,7 +32,8 @@ class Aside extends Component {
                             <h2 className="card-title mb-1">Search a post</h2>
                         </div>
                         <div className="card-body">
-                                <input type="text" className="w-100 my-2 py-1 px-2" id="search_input" placeholder="Write anything" />
+                            <input type="text" className="w-100 my-2 py-1 px-2" id="search_input" placeholder="Write anything" />
+                            <button className="btn btn-success w-100 my-2">Search</button>
                         </div>
                     </div>
                     <div className="card shadow mb-5">

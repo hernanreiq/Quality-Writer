@@ -76,3 +76,15 @@ footer p, .card-body {
 .card-footer {
   background-color: #2e2e2e !important;
 }
+
+textarea {
+  max-height: 300px;
+}
+
+.swal2-popup {
+  background-color: #df691a !important;
+}
+
+.swal2-title {
+  color: #fff !important;
+}
