@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
 class Aside extends Component {
-    render(){
-        return(
+    render() {
+        return (
             <React.Fragment>
                 <aside>
                     <div className="card shadow mb-5">
@@ -25,6 +25,21 @@ class Aside extends Component {
                             <ul>
                                 <li><a href="/entertainment">Entertainment</a></li>
                             </ul>
+                        </div>
+                    </div>
+                    <div className="card shadow mb-5">
+                        <div className="card-header">
+                            <h2 className="card-title mb-1">Search a post</h2>
+                        </div>
+                        <div className="card-body">
+                            <form>
+                                <div className="form-group">
+                                    <input type="text" className="form-control" id="search_input" placeholder="Write anything"/>
+                                </div>
+                                <div className="form-group">
+                                    <button className="btn btn-success w-100">Search</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                     <div className="card shadow mb-5">
