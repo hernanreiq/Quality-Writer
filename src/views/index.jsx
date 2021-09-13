@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Header from './partials/header';
 import Footer from "./partials/footer";
 import Aside from "./partials/aside";
 import Post from "./partials/post";
@@ -35,6 +36,7 @@ class Index extends Component {
     render() {
         return (
             <React.Fragment>
+                <Header />
                 <div className="container my-5">
                     <div className="row">
                         <div className="col-md-8 p-3">

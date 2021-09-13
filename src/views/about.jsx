@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Header from "./partials/header";
 import Footer from "./partials/footer";
 import HernanPhoto from '../views/img/hernanreiq.jpg';
 
@@ -6,6 +7,7 @@ class About extends Component {
     render() {
         return (
             <React.Fragment>
+                <Header />
                 <main className="container p-4">
                     <div className="row">
                         <div className="col-md-6 offset-md-3 my-5">
