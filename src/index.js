@@ -1,29 +1,14 @@
-//DEPENDENCIAS
-const express = require('express');
-const morgan = require('morgan');
-const path = require('path');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './views/css/style.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
-const { mongoose } = require('./database');
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
 
-const app = express();
-
-// ROUTER FILE
-const router = require('./routes/router');
-
-//SETTINGS
-const PORT = process.env.PORT || 3000;
-
-//MIDDLEWARES
-app.use(morgan('dev'));
-app.use(express.json());
-
-//ROUTES
-app.use('/', router);
-
-//STATIC FILES
-app.use(express.static(path.join(__dirname, 'public')));
-
-//STARTING THE SERVER
-app.listen(PORT, () => {
-    console.log("Server is ready!", PORT);
-})
+reportWebVitals();
