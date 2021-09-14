@@ -2,10 +2,18 @@ import React, { Component } from "react";
 import SweetAlert from "sweetalert2";
 
 class Create extends Component {
+    titleRef = React.createRef();
+    topicRef = React.createRef();
+    contentRef = React.createRef();
+
     createPost = (e) => {
         e.preventDefault();
         this.confirmation();
+        console.log('Title:', this.titleRef.current.value);
+        console.log('Topic:', this.topicRef.current.value);
+        console.log('Content:', this.contentRef.current.value);
     }
+
     confirmation = () => {
         const Toast = SweetAlert.mixin({
             toast: true,
@@ -23,6 +31,7 @@ class Create extends Component {
             title: 'Post created successfully!'
         })
     }
+
     render() {
         return (
             <React.Fragment>
@@ -34,13 +43,12 @@ class Create extends Component {
                                     <h2 className="card-title mb-1">Create a new post</h2>
                                 </div>
                                 <div className="card-body">
-                                    <form id="create-post">
+                                    <form id="create-post" onSubmit={this.createPost}>
                                         <div className="form-group">
-                                            <input placeholder="Title" name="title" type="text" className="form-control" required/>
+                                            <input placeholder="Title" name="title" ref={this.titleRef} type="text" className="form-control" required autoFocus/>
                                         </div>
                                         <div className="form-group">
-                                            <select name="topic" className="form-control" required> 
-                                                <option disabled selected>Choose a topic</option>
+                                            <select name="topic" ref={this.topicRef} className="form-control" required> 
                                                 <option value="Science">Science</option>
                                                 <option value="Technology">Technology</option>
                                                 <option value="Business">Business</option>
@@ -49,14 +57,14 @@ class Create extends Component {
                                             </select>
                                         </div>
                                         <div className="form-group">
-                                            <textarea placeholder="Content" className="form-control" required></textarea>
+                                            <textarea placeholder="Content" name="content" ref={this.contentRef} className="form-control" required></textarea>
                                         </div>
                                     </form>
                                 </div>
                                 <div className="card-footer">
                                     <a href="/home" className="btn btn-primary w-100 my-2 shadow">Home</a>
-                                    <a href="/home" className="btn btn-info w-100 my-2 shadow">Reset</a>
-                                    <button form="create-post" className="btn btn-success w-100 my-2 shadow" onClick={this.createPost}>Create this post</button>
+                                    <button form="create-post" className="btn btn-info w-100 my-2 shadow" type="reset">Reset</button>
+                                    <button form="create-post" className="btn btn-success w-100 my-2 shadow" type="submit">Create this post</button>
                                 </div>
                             </div>
                         </div>
