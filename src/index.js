@@ -18,7 +18,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 //ROUTES
-app.use('/api/post', router);
+app.use('/', router);
 
 //STATIC FILES
 app.use(express.static(path.join(__dirname, 'public')));
