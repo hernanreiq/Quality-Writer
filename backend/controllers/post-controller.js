@@ -14,7 +14,7 @@ const PostController = {
             created_at: Date.now(),
         });
         await newPost.save();
-        res.json('A new post has been created!');
+        res.json(true);
     },
     updatePost: async (req, res) => {
         const {title, topic, content} = req.body;

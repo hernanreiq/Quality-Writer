@@ -18,7 +18,7 @@ class Read extends Component {
     }
     render() {
         if (this.state.error) {
-            this.getAllPost()
+            this.getAllPost();
         }
         return (
             <React.Fragment>
@@ -29,9 +29,9 @@ class Read extends Component {
                                 <div className="card-header bg-success text-center">
                                     <h2 className="card-title mb-1">View all posts</h2>
                                 </div>
-                                <div className="card-body p-0">
+                                <div className="card-body p-0 m-0">
                                     {this.state.error === false &&
-                                        <table className="table table-dark table-hover">
+                                        <table className="table table-dark mb-0">
                                             <thead>
                                                 <tr>
                                                     <th scope="col">#</th>
