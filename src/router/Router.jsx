@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import RouterCRUD from "./RouterCRUD";
 import Nav from "../views/partials/nav";
 import Index from "../views";
 import About from "../views/about";
-import Error from "../views/error";
+import Search from "../views/partials/search/search";
+import CRUD from "../views/crud";
+import Error from '../views/error';
+
+
 
 class Router extends Component {
     render(){
@@ -16,8 +19,9 @@ class Router extends Component {
                         <Route exact path="/" component={Index} />
                         <Route exact path="/home" component={Index} />
                         <Route exact path="/about" component={About} />
-                        <Route exact path="/error" component={Error} />
-                        <RouterCRUD />
+                        <Route exact path="/search" component={Search} />
+                        <Route exact path="/crud" component={CRUD} />
+                        <Route exact path="*" component={Error} />
                     </Switch>
                 </BrowserRouter>
             </React.Fragment>

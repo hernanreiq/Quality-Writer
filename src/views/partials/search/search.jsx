@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import DataSearched from './data_searched';
 
-class Update extends Component {
+class Search extends Component {
     state = {
         posts: [],
         error: true,
@@ -61,7 +61,6 @@ class Update extends Component {
                                     </form>
                                 </div>
                                 <div className="card-footer">
-                                    <a href="/home" className="btn btn-primary w-100 my-2 shadow">Home</a>
                                     <button type="reset" form="search-post" onClick={this.resetSearch} className="btn btn-info w-100 my-2 shadow">Reset</button>
                                     <button type="submit" form="search-post" className="btn btn-success w-100 my-2 shadow">Search</button>
                                 </div>
@@ -102,4 +101,4 @@ class Update extends Component {
     }
 }
 
-export default Update;
+export default Search;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import DataSearched from "./data_searched";
+import DataSearched from "../search/data_searched";
 
 class Read extends Component {
     state = {

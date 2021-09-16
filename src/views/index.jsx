@@ -39,6 +39,9 @@ class Index extends Component {
                 <Header />
                 <div className="container my-5">
                     <div className="row">
+                        <div className="col-md-4 p-3">
+                            <Aside />
+                        </div>
                         <div className="col-md-8 p-3">
                             <main>
                                 <div className="card shadow">
@@ -64,9 +67,6 @@ class Index extends Component {
                                     </div>
                                 </div>
                             </main>
-                        </div>
-                        <div className="col-md-4 p-3">
-                            <Aside />
                         </div>
                     </div>
                 </div>

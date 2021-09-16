@@ -1,25 +1,17 @@
 import React, { Component } from "react";
-import Create from "./partials/crud_create";
-import Read from "./partials/crud_read";
-import Update from "./partials/crud_update";
-import Delete from "./partials/crud_delete";
+import Create from "./partials/crud/crud_create";
+import Read from "./partials/crud/crud_read";
+import Search from "./partials/search/search";
+import Delete from "./partials/crud/crud_delete";
 
 class CRUD extends Component {
-    render(){
-        return(
+    render() {
+        return (
             <React.Fragment>
-                { this.props.view === "Create" &&
-                    <Create />
-                }
-                {this.props.view === "Read" &&
-                    <Read />
-                }
-                {this.props.view === "Update" &&
-                    <Update />
-                }
-                {this.props.view === "Delete" &&
-                    <Delete />
-                }
+                <Create />
+                <Read />
+                <Search />
+                <Delete />
             </React.Fragment>
         )
     }
