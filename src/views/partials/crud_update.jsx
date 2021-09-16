@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import TableRead from "./table_crud_read";
+import DataSearched from './data_searched';
 
 class Update extends Component {
     state = {
@@ -48,53 +48,9 @@ class Update extends Component {
             <React.Fragment>
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-8 my-2">
-                            <div className="card shadow my-5">
-                                <div className="card-header bg-info text-center">
-                                    <h2 className="card-title mb-1">Results</h2>
-                                </div>
-                                <div className="card-body">
-                                    {this.state.error === false && this.state.searched && this.state.posts.length > 0 &&
-                                        <table className="table table-dark mb-0">
-                                            <thead>
-                                                <tr>
-                                                    <th scope="col">#</th>
-                                                    <th scope="col">Title</th>
-                                                    <th scope="col">Topic</th>
-                                                    <th scope="col">Update</th>
-                                                </tr>
-                                            </thead>
-                                            {this.state.error === false && this.state.searched && this.state.posts.length > 0 &&
-                                                <tbody>
-                                                    {
-                                                        this.state.posts.map((post, i) => {
-                                                            return (
-                                                                <TableRead
-                                                                    key={i}
-                                                                    index={i}
-                                                                    title={post.title}
-                                                                    topic={post.topic}
-                                                                    id={post._id}
-                                                                />
-                                                            )
-                                                        })
-                                                    }
-                                                </tbody>
-                                            }
-                                        </table>
-                                    }
-                                    {this.state.error === false && this.state.searched && this.state.posts.length === 0 &&
-                                        <h3 className="my-2 text-center">The searched post does not exist</h3>
-                                    }
-                                    {this.state.error === true && this.state.searched === false &&
-                                        <h3 className="my-2 text-center">You must perform a search</h3>
-                                    }
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4 my-2">
-                            <div className="card shadow my-5">
-                                <div className="card-header bg-info text-center">
+                        <div className="col-md-4 my-5">
+                            <div className="card shadow">
+                                <div className="card-header bg-primary text-center">
                                     <h2 className="card-title mb-1">Search a post</h2>
                                 </div>
                                 <div className="card-body">
@@ -108,6 +64,34 @@ class Update extends Component {
                                     <a href="/home" className="btn btn-primary w-100 my-2 shadow">Home</a>
                                     <button type="reset" form="search-post" onClick={this.resetSearch} className="btn btn-info w-100 my-2 shadow">Reset</button>
                                     <button type="submit" form="search-post" className="btn btn-success w-100 my-2 shadow">Search</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-md-8 my-5">
+                            <div className="card shadow">
+                                <div className="card-header bg-primary text-center">
+                                    <h2 className="card-title mb-1">Results</h2>
+                                </div>
+                                <div className="card-body">
+                                    {this.state.error === false && this.state.searched && this.state.posts.length > 0 &&
+                                        this.state.posts.map((post, i) => {
+                                            return (
+                                                <DataSearched
+                                                    key={i}
+                                                    index={i}
+                                                    title={post.title}
+                                                    topic={post.topic}
+                                                    id={post._id}
+                                                />
+                                            )
+                                        })
+                                    }
+                                    {this.state.error === false && this.state.searched && this.state.posts.length === 0 &&
+                                        <h3 className="my-2 text-center">The searched post does not exist</h3>
+                                    }
+                                    {this.state.error === true && this.state.searched === false &&
+                                        <h3 className="my-2 text-center">You must perform a search</h3>
+                                    }
                                 </div>
                             </div>
                         </div>

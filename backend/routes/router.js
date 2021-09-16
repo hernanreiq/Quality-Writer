@@ -8,5 +8,4 @@ route.post('/api/post', PostController.savePost);
 route.put('/api/post/:id', PostController.updatePost);
 route.delete('/api/post/:id', PostController.deletePost);
 
-
 module.exports = route;

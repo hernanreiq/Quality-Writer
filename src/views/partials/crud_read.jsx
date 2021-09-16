@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import TableRead from "./table_crud_read";
+import DataSearched from "./data_searched";
 
 class Read extends Component {
     state = {
@@ -45,9 +45,8 @@ class Read extends Component {
                                                     {
                                                         this.state.posts.map((post, i) => {
                                                             return (
-                                                                <TableRead
+                                                                <DataSearched
                                                                     key={i}
-                                                                    index={i}
                                                                     title={post.title}
                                                                     topic={post.topic}
                                                                     id={post._id}
