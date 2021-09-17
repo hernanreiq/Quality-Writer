@@ -1,7 +1,7 @@
 const PostModel = require('../models/post');
 
 const PostController = {
-    getOnePost: async (req, res) => {
+    SearchPost: async (req, res) => {
         const search = req.query.search;
         const posts = await PostModel.find({
             $or: [
@@ -10,6 +10,11 @@ const PostController = {
                 { topic: { $regex: '.*' + search + '.*', $options: 'i' } }]
         });
         res.json(posts);
+    },
+    getOnePost: async (req, res) => {
+        const idPost = req.params.id;
+        const post = await PostModel.find({_id: idPost});
+        res.json(post);
     },
     getAllPosts: async (req, res) => {
         const posts = await PostModel.find();

@@ -19,7 +19,6 @@ class Router extends Component {
                         <Route exact path="/" component={Index} />
                         <Route exact path="/home" component={Index} />
                         <Route exact path="/about" component={About} />
-                        <Route exact path="/search" component={Search} />
                         <Route exact path="/crud" component={CRUD} />
                         <Route exact path="*" component={Error} />
                     </Switch>

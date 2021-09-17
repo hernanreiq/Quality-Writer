@@ -16,9 +16,6 @@ class Nav extends Component {
                                 <li className="nav-item">
                                     <NavLink to="/home" activeClassName="active" className="nav-link h6 mb-0">Home</NavLink>
                                 </li>
-                                <li className="nav-item">
-                                    <NavLink to="/search" activeClassName="active" className="nav-link h6 mb-0">Search</NavLink>
-                                </li>
                                 <li className="nav-item">   
                                     <NavLink to="/crud" activeClassName="active" className="nav-link h6 mb-0">CRUD</NavLink>
                                 </li>

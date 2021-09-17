@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Create from "./partials/crud/crud_create";
-import Read from "./partials/crud/crud_read";
+import Create from "./partials/crud_create";
+import Search from "./partials/search/search";
 
 class CRUD extends Component {
     render() {
@@ -9,7 +9,7 @@ class CRUD extends Component {
                 <div className="container">
                     <div className="row">
                         <Create />
-                        <Read />
+                        <Search />
                     </div>
                 </div>
             </React.Fragment>
