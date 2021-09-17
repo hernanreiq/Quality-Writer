@@ -27,14 +27,6 @@ class Aside extends Component {
                             </ul>
                         </div>
                     </div>
-                    <div className="card shadow mb-5">
-                        <div className="card-header">
-                            <h2 className="card-title mb-1">CRUD for posts</h2>
-                        </div>
-                        <div className="card-body">
-                            <a href="/crud" className="btn btn-success w-100 my-2">Create, Read, Update and Delete</a>
-                        </div>
-                    </div>
                 </aside>
             </React.Fragment>
         )
