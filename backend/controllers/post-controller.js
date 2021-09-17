@@ -17,7 +17,7 @@ const PostController = {
         res.json(post);
     },
     getAllPosts: async (req, res) => {
-        const posts = await PostModel.find();
+        const posts = await PostModel.find().sort({_id: -1});
         res.json(posts);
     },
     savePost: async (req, res) => {

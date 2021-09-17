@@ -3,34 +3,28 @@ import Header from './partials/header';
 import Footer from "./partials/footer";
 import Aside from "./partials/aside";
 import Post from "./partials/post";
+import axios from "axios";
 
 class Index extends Component {
     state = {
-        post: [
-            {
-                title: "Nueva serie en Sabroso Play",
-                content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia in quaerat unde necessitatibus deleniti quod, placeat, tenetur illo velit, blanditiis suscipit modi qui. Similique quo quam, vel autem reiciendis asperiores.",
-                url_tag: '/cinema',
-                tag: 'Cinema',
-                time: '2 hours ago'
-            },
-            {
-                title: "Hernan subió otro proyecto más al portafolio",
-                content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia in quaerat unde necessitatibus deleniti quod, placeat, tenetur illo velit, blanditiis suscipit modi qui. Similique quo quam, vel autem reiciendis asperiores.",
-                url_tag: '/technology',
-                tag: 'Technology',
-                time: '7 minutes ago'
-            },
-            {
-                title: "Joven Dominicano de 22 años busca trabajo como Desarrollador y Diseñador Web",
-                content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia in quaerat unde necessitatibus deleniti quod, placeat, tenetur illo velit, blanditiis suscipit modi qui. Similique quo quam, vel autem reiciendis asperiores.",
-                url_tag: '/business',
-                tag: 'Business',
-                time: 'Just now'
-            }
-        ]
+        posts: [],
+        postsSearched: false
     }
+
+    getAllPost = () => {
+        axios('http://localhost:3700/api/posts')
+            .then(res => {
+                this.setState({
+                    posts: res.data,
+                    postsSearched: true
+                })
+            })
+    }
+
     render() {
+        if(!this.state.postsSearched){
+            this.getAllPost();
+        }
         return (
             <React.Fragment>
                 <Header />
@@ -44,15 +38,14 @@ class Index extends Component {
                                     </div>
                                     <div className="card-body card-body-main">
                                         {
-                                            this.state.post.map((article, i) => {
+                                            this.state.posts.map((post, i) => {
                                                 return (
                                                     <Post
                                                         key={i}
-                                                        post_title={article.title}
-                                                        post_content={article.content}
-                                                        post_tag_url={article.url_tag}
-                                                        post_tag={article.tag}
-                                                        post_time={article.time}
+                                                        post_title={post.title}
+                                                        post_content={post.content}
+                                                        post_topic={post.topic}
+                                                        post_time={post.created_at}
                                                     />
                                                 )
                                             })

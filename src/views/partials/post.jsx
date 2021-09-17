@@ -19,12 +19,12 @@ class Post extends Component {
                     <div className="card-footer">
                         <h5 className="mb-0">
                             <span className="badge badge-primary">
-                                <a href={this.props.post_tag_url} className="text-decoration-none text-white badge-url">
-                                    {this.props.post_tag}
+                                <a href={'/' + this.props.post_topic} className="text-decoration-none text-white badge-url">
+                                    {this.props.post_topic}
                                 </a>
                             </span>
                             <span className="badge badge-primary ml-3">
-                                {format(this.props.post_time, 'en-us')}
+                                {format(this.props.post_time, 'en_US')}
                             </span>
                         </h5>
                     </div>

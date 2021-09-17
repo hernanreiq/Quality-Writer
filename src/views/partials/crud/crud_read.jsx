@@ -8,7 +8,7 @@ class Read extends Component {
                 <Post 
                     post_title={this.props.post.title}
                     post_content={this.props.post.content}
-                    post_tag={this.props.post.topic}
+                    post_topic={this.props.post.topic}
                     post_time={this.props.post.created_at}
                 />
             </React.Fragment>
