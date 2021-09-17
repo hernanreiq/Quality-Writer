@@ -10,7 +10,6 @@ class Index extends Component {
             {
                 title: "Nueva serie en Sabroso Play",
                 content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia in quaerat unde necessitatibus deleniti quod, placeat, tenetur illo velit, blanditiis suscipit modi qui. Similique quo quam, vel autem reiciendis asperiores.",
-                url: '/post/',
                 url_tag: '/cinema',
                 tag: 'Cinema',
                 time: '2 hours ago'
@@ -18,7 +17,6 @@ class Index extends Component {
             {
                 title: "Hernan subió otro proyecto más al portafolio",
                 content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia in quaerat unde necessitatibus deleniti quod, placeat, tenetur illo velit, blanditiis suscipit modi qui. Similique quo quam, vel autem reiciendis asperiores.",
-                url: '/post/',
                 url_tag: '/technology',
                 tag: 'Technology',
                 time: '7 minutes ago'
@@ -26,7 +24,6 @@ class Index extends Component {
             {
                 title: "Joven Dominicano de 22 años busca trabajo como Desarrollador y Diseñador Web",
                 content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia in quaerat unde necessitatibus deleniti quod, placeat, tenetur illo velit, blanditiis suscipit modi qui. Similique quo quam, vel autem reiciendis asperiores.",
-                url: '/post/',
                 url_tag: '/business',
                 tag: 'Business',
                 time: 'Just now'
@@ -53,7 +50,6 @@ class Index extends Component {
                                                         key={i}
                                                         post_title={article.title}
                                                         post_content={article.content}
-                                                        post_url={article.url}
                                                         post_tag_url={article.url_tag}
                                                         post_tag={article.tag}
                                                         post_time={article.time}

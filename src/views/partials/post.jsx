@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {format} from 'timeago.js';
 
 class Post extends Component {
     render() {
@@ -14,9 +15,6 @@ class Post extends Component {
                         <p className="card-text mb-0 text-justify">
                             {this.props.post_content}
                         </p>
-                        <p className="card-text mb-0 text-right">
-                            <a href={this.props.post_url} className="text-decoration-none">See more</a>
-                        </p>
                     </div>
                     <div className="card-footer">
                         <h5 className="mb-0">
@@ -26,7 +24,7 @@ class Post extends Component {
                                 </a>
                             </span>
                             <span className="badge badge-primary ml-3">
-                                {this.props.post_time}
+                                {format(this.props.post_time, 'en-us')}
                             </span>
                         </h5>
                     </div>

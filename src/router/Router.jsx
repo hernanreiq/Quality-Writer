@@ -3,7 +3,6 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Nav from "../views/partials/nav";
 import Index from "../views";
 import About from "../views/about";
-import Search from "../views/partials/search/search";
 import CRUD from "../views/crud";
 import Error from '../views/error';
 

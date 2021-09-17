@@ -43,6 +43,10 @@ class Search extends Component {
         this.searchRef.current.value = '';
     }
 
+    getClickedPost = (post) => {
+        this.props.getClickedPost(post);
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -76,9 +80,8 @@ class Search extends Component {
                                                 <DataSearched
                                                     key={i}
                                                     index={i}
-                                                    title={post.title}
-                                                    topic={post.topic}
-                                                    id={post._id}
+                                                    post={post}
+                                                    getClickedPost={this.getClickedPost}
                                                 />
                                             )
                                         })

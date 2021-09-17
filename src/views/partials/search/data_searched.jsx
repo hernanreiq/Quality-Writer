@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class DataSearched extends Component {
     state = {
-        classNameRow: "row p-1 my-2"
+        classNameRow: "row p-1 my-2 bg-secondary-2"
     }
 
     changeBackground = () => {
@@ -17,13 +17,21 @@ class DataSearched extends Component {
         this.changeBackground();
     }
 
+    getClickedPost = () => {
+        this.props.getClickedPost(this.props.post);
+    }
+
     render() {
         return (
             <React.Fragment>
                 <div className={this.state.classNameRow}>
-                    <div className="col-md-7 my-1">{this.props.title}</div>
-                    <div className="col-md-3 my-1">{this.props.topic}</div>
-                    <div className="col-md-2 my-1">{this.props.id}</div>
+                    <div className="col-md-7 my-1">{this.props.post.title}</div>
+                    <div className="col-md-2 my-1">{this.props.post.topic}</div>
+                    <div className="col-md-3 my-1 text-center">
+                        <button className="btn btn-dark mx-2 py-2 text-danger"><i className="h4 mb-0 far fa-trash-alt"></i></button>
+                        <button className="btn btn-dark mx-2 py-2 text-info"><i className="h4 mb-0 fas fa-edit"></i></button>
+                        <button onClick={this.getClickedPost} className="btn btn-dark mx-2 py-2 text-success"><i className="h4 mb-0 fas fa-eye"></i></button>
+                    </div>
                 </div>
             </React.Fragment>
         )
