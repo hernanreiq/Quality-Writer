@@ -1,11 +1,21 @@
 import React, { Component } from "react";
-import {format} from 'timeago.js';
+import { format } from 'timeago.js';
 
 class Post extends Component {
+    state = {
+        textReduce: false
+    }
+
+    seeMore = () => {
+        this.setState({
+            textReduce: true
+        });
+    }
+
     render() {
         return (
             <React.Fragment>
-                <div className="card shadow mb-5">
+                <div className="card shadow mb-3">
                     <div className="card-header">
                         <h2 className="card-title-article mb-0">
                             {this.props.post_title}
@@ -13,7 +23,14 @@ class Post extends Component {
                     </div>
                     <div className="card-body">
                         <p className="card-text mb-0 text-justify">
-                            {this.props.post_content}
+                            {this.props.post_content.length > 70 && !this.state.textReduce ?
+                                this.props.post_content.substring(0, 70) + '...' : this.props.post_content
+                            }
+                            {this.props.post_content.length > 70 && !this.state.textReduce ?
+                                <p className="card-text mb-0 text-right">
+                                    <button onClick={this.seeMore} className="btn btn-primary mt-3">See more</button>
+                                </p> : ''
+                            }
                         </p>
                     </div>
                     <div className="card-footer">

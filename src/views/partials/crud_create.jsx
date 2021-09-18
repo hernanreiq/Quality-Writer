@@ -60,8 +60,8 @@ class Create extends Component {
     render() {
         return (
             <React.Fragment>
-                <div className="col-md-6">
-                    <div className="card shadow my-5">
+                <div className="col-md-6 mt-5 mb-3">
+                    <div className="card shadow">
                         <div className="card-header bg-success text-center">
                             <h2 className="card-title mb-1">Create a new post</h2>
                         </div>

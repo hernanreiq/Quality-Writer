@@ -50,7 +50,7 @@ class Search extends Component {
     render() {
         return (
             <React.Fragment>
-                        <div className="col-md-6 my-5">
+                        <div className="col-md-6 mt-5 mb-3">
                             <div className="card shadow">
                                 <div className="card-header bg-primary text-center">
                                     <h2 className="card-title mb-1">Search a post</h2>
@@ -68,7 +68,7 @@ class Search extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-12 my-5">
+                        <div className="col-md-12 my-3">
                             <div className="card shadow">
                                 <div className="card-header bg-primary text-center">
                                     <h2 className="card-title mb-1">Results</h2>
