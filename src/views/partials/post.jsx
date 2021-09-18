@@ -26,12 +26,12 @@ class Post extends Component {
                             {this.props.post_content.length > 70 && !this.state.textReduce ?
                                 this.props.post_content.substring(0, 70) + '...' : this.props.post_content
                             }
-                            {this.props.post_content.length > 70 && !this.state.textReduce ?
-                                <p className="card-text mb-0 text-right">
-                                    <button onClick={this.seeMore} className="btn btn-primary mt-3">See more</button>
-                                </p> : ''
-                            }
                         </p>
+                        {this.props.post_content.length > 70 && !this.state.textReduce ?
+                            <div className="d-block text-right mt-1">
+                                <button onClick={this.seeMore} className="btn btn-primary">See more</button>
+                            </div> : ''
+                        }
                     </div>
                     <div className="card-footer">
                         <h5 className="mb-0">

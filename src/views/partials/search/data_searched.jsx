@@ -6,19 +6,27 @@ class DataSearched extends Component {
     }
 
     changeBackground = () => {
-        if((this.props.index % 2) === 0){
+        if ((this.props.index % 2) === 0) {
             this.setState({
                 classNameRow: "row p-1 my-2 bg-secondary"
             })
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.changeBackground();
     }
-
-    getClickedPost = () => {
-        this.props.getClickedPost(this.props.post);
+    
+    readPost = () => {
+        this.props.getClickedPost(this.props.post, 'read');
+    }
+    
+    updatetPost = () => {
+        this.props.getClickedPost(this.props.post, 'update');
+    }
+    
+    deletePost = () => {
+        this.props.getClickedPost(this.props.post, 'delete');
     }
 
     render() {
@@ -28,9 +36,9 @@ class DataSearched extends Component {
                     <div className="col-md-7 my-1">{this.props.post.title}</div>
                     <div className="col-md-2 my-1">{this.props.post.topic}</div>
                     <div className="col-md-3 my-1 text-center">
-                        <button className="btn btn-dark mx-2 py-2 text-danger"><i className="h4 mb-0 far fa-trash-alt"></i></button>
-                        <button className="btn btn-dark mx-2 py-2 text-info"><i className="h4 mb-0 fas fa-edit"></i></button>
-                        <button onClick={this.getClickedPost} className="btn btn-dark mx-2 py-2 text-success"><i className="h4 mb-0 fas fa-eye"></i></button>
+                        <button onClick={this.deletePost} className="btn btn-dark mx-2 py-2 text-danger"><i className="h4 mb-0 far fa-trash-alt"></i></button>
+                        <button onClick={this.updatetPost} className="btn btn-dark mx-2 py-2 text-info"><i className="h4 mb-0 fas fa-edit"></i></button>
+                        <button onClick={this.readPost} className="btn btn-dark mx-2 py-2 text-success"><i className="h4 mb-0 fas fa-eye"></i></button>
                     </div>
                 </div>
             </React.Fragment>

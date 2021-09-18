@@ -6,25 +6,34 @@ import Search from "./partials/search/search";
 class CRUD extends Component {
     state = {
         post: {},
+        actionClicked: null,
+        seeMoreReseted: false,
         postExist: false
     }
-    getClickedPost = (post) => {
+    getClickedPost = (post, action) => {
         this.setState({
             post: post,
+            actionClicked: action,
             postExist: true
         })
     }
-
+    changePostExist = (value) => {
+        this.setState({
+            postExist: value
+        })
+    }
     render() {
         return (
             <React.Fragment>
                 <div className="container">
                     <div className="row">
-                        <Create />
-                        {this.state.postExist &&
+                        {this.state.postExist && this.state.actionClicked === 'read' &&
                             <Read post={this.state.post} />
                         }
-                        <Search getClickedPost={this.getClickedPost} />
+                        {this.state.postExist === false &&
+                            <Create />
+                        }
+                        <Search getClickedPost={this.getClickedPost} changePostExist={this.changePostExist} />
                     </div>
                 </div>
             </React.Fragment>

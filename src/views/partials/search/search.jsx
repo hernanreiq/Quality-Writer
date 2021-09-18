@@ -16,6 +16,7 @@ class Search extends Component {
         var search = this.searchRef.current.value;
         if (search === '') {
             this.resetSearch();
+            this.props.changePostExist(false);
         } else {
             axios.get('http://localhost:3700/api/post?search=' + search)
                 .then(res => {
@@ -41,10 +42,7 @@ class Search extends Component {
             searched: false
         });
         this.searchRef.current.value = '';
-    }
-
-    getClickedPost = (post) => {
-        this.props.getClickedPost(post);
+        this.props.changePostExist(false);
     }
 
     render() {
@@ -81,7 +79,7 @@ class Search extends Component {
                                                     key={i}
                                                     index={i}
                                                     post={post}
-                                                    getClickedPost={this.getClickedPost}
+                                                    getClickedPost={this.props.getClickedPost}
                                                 />
                                             )
                                         })
