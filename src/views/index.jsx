@@ -42,10 +42,7 @@ class Index extends Component {
                                                 return (
                                                     <Post
                                                         key={i}
-                                                        post_title={post.title}
-                                                        post_content={post.content}
-                                                        post_topic={post.topic}
-                                                        post_time={post.created_at}
+                                                        post={post}
                                                     />
                                                 )
                                             })

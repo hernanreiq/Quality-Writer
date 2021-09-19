@@ -7,10 +7,7 @@ class Read extends Component {
             <React.Fragment>
                 <div className="col-md-6 mt-5">
                     <Post
-                        post_title={this.props.post.title}
-                        post_content={this.props.post.content}
-                        post_topic={this.props.post.topic}
-                        post_time={this.props.post.created_at}
+                        post={this.props.post}
                     />
                 </div>
             </React.Fragment>

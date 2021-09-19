@@ -22,6 +22,7 @@ const PostController = {
             topic: topic,
             content: content,
             created_at: Date.now(),
+            edited: false
         });
         await newPost.save();
         res.json(true);
@@ -29,7 +30,7 @@ const PostController = {
     updatePost: async (req, res) => {
         const { title, topic, content } = req.body;
         const idPost = req.params.id;
-        const newDataPost = { title, topic, content };
+        const newDataPost = { title: title, topic: topic, content: content, edited: true };
         await PostModel.findByIdAndUpdate(idPost, newDataPost);
         res.json(true);
     },
