@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import Create from "./partials/crud_create";
+import Create from "./partials/crud/crud_create";
 import Read from "./partials/crud/crud_read";
+import Update from "./partials/crud/crud_update";
 import Search from "./partials/search/search";
 
 class CRUD extends Component {
@@ -27,11 +28,14 @@ class CRUD extends Component {
             <React.Fragment>
                 <div className="container">
                     <div className="row">
+                        {this.state.postExist === false &&
+                            <Create />
+                        }
                         {this.state.postExist && this.state.actionClicked === 'read' &&
                             <Read post={this.state.post} />
                         }
-                        {this.state.postExist === false &&
-                            <Create />
+                        {this.state.postExist && this.state.actionClicked === 'update' &&
+                            <Update post={this.state.post} />
                         }
                         <Search getClickedPost={this.getClickedPost} changePostExist={this.changePostExist} />
                     </div>

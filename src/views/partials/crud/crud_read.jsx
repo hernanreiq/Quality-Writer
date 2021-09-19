@@ -5,7 +5,7 @@ class Read extends Component {
     render() {
         return (
             <React.Fragment>
-                <div className="col-md-12 my-3">
+                <div className="col-md-6 mt-5">
                     <Post
                         post_title={this.props.post.title}
                         post_content={this.props.post.content}

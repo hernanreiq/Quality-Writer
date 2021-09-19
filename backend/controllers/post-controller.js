@@ -35,13 +35,13 @@ const PostController = {
         const { title, topic, content } = req.body;
         const idPost = req.params.id;
         const newDataPost = { title, topic, content };
-        await PostModel.findByIdAndUpdate(idPost, newDataPost)
-        res.json('Post updated!')
+        await PostModel.findByIdAndUpdate(idPost, newDataPost);
+        res.json(true);
     },
     deletePost: async (req, res) => {
         const idPost = req.params.id;
         await PostModel.findByIdAndDelete(idPost);
-        res.json('Post deleted!')
+        res.json(true);
     }
 }
 

@@ -28,7 +28,7 @@ class Post extends Component {
                             }
                         </p>
                         {this.props.post_content.length > 70 && !this.state.textReduce ?
-                            <div className="d-block text-right mt-1">
+                            <div className="d-block text-right mt-3">
                                 <button onClick={this.seeMore} className="btn btn-primary">See more</button>
                             </div> : ''
                         }

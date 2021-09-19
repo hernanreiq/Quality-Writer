@@ -1,60 +1,41 @@
 import React, { Component } from "react";
-import axios from "axios";
-import SweetAlert from "sweetalert2";
+import { ToastAlert } from "../helpers/toast";
+import { AxiosPostPut } from "../helpers/axios_post_put";
 
-class Create extends Component {
-    state = {
-        postSaved: false
-    }
-
+class Update extends Component {
     titleRef = React.createRef();
     topicRef = React.createRef();
     contentRef = React.createRef();
 
-    createPost = (e) => {
+    componentDidUpdate() {
+        this.assignData();
+    }
+
+    componentDidMount() {
+        this.assignData();
+    }
+
+    assignData = () => {
+        this.titleRef.current.value = this.props.post.title;
+        this.topicRef.current.value = this.props.post.topic;
+        this.contentRef.current.value = this.props.post.content;
+    }
+
+    updatePost = (e) => {
         e.preventDefault();
         var title = this.titleRef.current.value;
         var topic = this.topicRef.current.value;
         var content = this.contentRef.current.value;
+        var idPost = this.props.post._id;
         if (title === '' || topic === '' || content === '') {
-            this.toastAlert('error', 'Your post should be broader')
+            ToastAlert('error', 'You can\'t do this update')
         } else if (title.length < 10 || content.length < 10 || topic === '') {
-            this.toastAlert('error', 'Your post should be broader')
+            ToastAlert('error', 'You can\'t do this update')
         } else {
             this.titleRef.current.value = '';
             this.contentRef.current.value = '';
-            axios({
-                method: 'POST',
-                url: 'http://localhost:3700/api/post',
-                data: {
-                    title: title,
-                    topic: topic,
-                    content: content
-                }
-            });
-            this.toastAlert('success', 'Your post has been created successfully!')
-            setTimeout(() => {
-                window.location.replace('/home');
-            }, 5000);
+            AxiosPostPut('PUT', 'http://localhost:3700/api/post/' + idPost, 'Your post has been updated successfully!', { title: title, topic: topic, content: content });
         }
-    }
-
-    toastAlert = (typeIcon, toastMessage) => {
-        const Toast = SweetAlert.mixin({
-            toast: true,
-            position: 'bottom-end',
-            showConfirmButton: false,
-            timer: 5000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-                toast.addEventListener('mouseenter', SweetAlert.stopTimer)
-                toast.addEventListener('mouseleave', SweetAlert.resumeTimer)
-            }
-        })
-        Toast.fire({
-            icon: typeIcon,
-            title: toastMessage
-        })
     }
 
     render() {
@@ -62,11 +43,11 @@ class Create extends Component {
             <React.Fragment>
                 <div className="col-md-6 mt-5 mb-3">
                     <div className="card shadow">
-                        <div className="card-header bg-success text-center">
-                            <h2 className="card-title mb-1">Create a new post</h2>
+                        <div className="card-header bg-info text-center">
+                            <h2 className="card-title mb-1">Update this post</h2>
                         </div>
                         <div className="card-body">
-                            <form id="create-post" onSubmit={this.createPost} autoComplete="off">
+                            <form id="update-post" onSubmit={this.updatePost} autoComplete="off">
                                 <div className="form-group">
                                     <input placeholder="Title" name="title" ref={this.titleRef} type="text" className="form-control" required autoFocus />
                                 </div>
@@ -85,8 +66,8 @@ class Create extends Component {
                             </form>
                         </div>
                         <div className="card-footer">
-                            <button form="create-post" className="btn btn-info w-100 my-2 shadow" type="reset">Reset</button>
-                            <button form="create-post" className="btn btn-success w-100 my-2 shadow" type="submit">Create this post</button>
+                            <button form="update-post" className="btn btn-info w-100 my-2 shadow" type="reset">Reset</button>
+                            <button form="update-post" className="btn btn-success w-100 my-2 shadow" type="submit">Update this post</button>
                         </div>
                     </div>
                 </div>
@@ -95,4 +76,4 @@ class Create extends Component {
     }
 }
 
-export default Create;
+export default Update;
