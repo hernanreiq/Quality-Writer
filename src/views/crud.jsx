@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Create from "./partials/crud/crud_create";
 import Read from "./partials/crud/crud_read";
 import Update from "./partials/crud/crud_update";
+import Delete from "./partials/crud/crud_delete";
 import Search from "./partials/search/search";
 
 class CRUD extends Component {
@@ -36,6 +37,9 @@ class CRUD extends Component {
                         }
                         {this.state.postExist && this.state.actionClicked === 'update' &&
                             <Update post={this.state.post} />
+                        }
+                        {this.state.postExist && this.state.actionClicked === 'delete' &&
+                            <Delete post={this.state.post} />
                         }
                         <Search getClickedPost={this.getClickedPost} changePostExist={this.changePostExist} />
                     </div>

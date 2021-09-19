@@ -11,11 +11,6 @@ const PostController = {
         });
         res.json(posts);
     },
-    getOnePost: async (req, res) => {
-        const idPost = req.params.id;
-        const post = await PostModel.find({_id: idPost});
-        res.json(post);
-    },
     getAllPosts: async (req, res) => {
         const posts = await PostModel.find().sort({_id: -1});
         res.json(posts);
@@ -39,8 +34,11 @@ const PostController = {
         res.json(true);
     },
     deletePost: async (req, res) => {
-        const idPost = req.params.id;
-        await PostModel.findByIdAndDelete(idPost);
+        const idParamsPost = req.params.id;
+        const idBodyPost = req.body.id;
+        if(idParamsPost === idBodyPost){
+            await PostModel.findByIdAndDelete(idParamsPost);
+        }
         res.json(true);
     }
 }

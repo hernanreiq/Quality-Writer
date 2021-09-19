@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { ToastAlert } from "../helpers/toast";
-import { AxiosPostPut } from "../helpers/axios_post_put";
+import { AxiosHTTP } from "../helpers/axios_http";
 
 class Update extends Component {
     titleRef = React.createRef();
@@ -34,7 +34,7 @@ class Update extends Component {
         } else {
             this.titleRef.current.value = '';
             this.contentRef.current.value = '';
-            AxiosPostPut('PUT', 'http://localhost:3700/api/post/' + idPost, 'Your post has been updated successfully!', { title: title, topic: topic, content: content });
+            AxiosHTTP('PUT', 'http://localhost:3700/api/post/' + idPost, 'Your post has been updated successfully!', { title: title, topic: topic, content: content });
         }
     }
 
@@ -67,7 +67,7 @@ class Update extends Component {
                         </div>
                         <div className="card-footer">
                             <button form="update-post" className="btn btn-info w-100 my-2 shadow" type="reset">Reset</button>
-                            <button form="update-post" className="btn btn-success w-100 my-2 shadow" type="submit">Update this post</button>
+                            <button form="update-post" className="btn btn-success w-100 my-2 shadow" type="submit">Update</button>
                         </div>
                     </div>
                 </div>

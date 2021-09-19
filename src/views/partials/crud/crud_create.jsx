@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { AxiosPostPut } from "../helpers/axios_post_put";
+import { AxiosHTTP } from "../helpers/axios_http";
 import { ToastAlert } from "../helpers/toast";
 
 class Create extends Component {
@@ -23,7 +23,7 @@ class Create extends Component {
         } else {
             this.titleRef.current.value = '';
             this.contentRef.current.value = '';
-            AxiosPostPut('POST', 'http://localhost:3700/api/post', 'Your post has been created successfully!', {title: title, topic: topic, content: content});
+            AxiosHTTP('POST', 'http://localhost:3700/api/post', 'Your post has been created successfully!', {title: title, topic: topic, content: content});
         }
     }
 
@@ -38,7 +38,7 @@ class Create extends Component {
                         <div className="card-body">
                             <form id="create-post" onSubmit={this.createPost} autoComplete="off">
                                 <div className="form-group">
-                                    <input placeholder="Title" name="title" ref={this.titleRef} type="text" className="form-control" required autoFocus />
+                                    <input placeholder="Title" name="title" ref={this.titleRef} type="text" className="form-control" required />
                                 </div>
                                 <div className="form-group">
                                     <select name="topic" ref={this.topicRef} className="form-control" required>
