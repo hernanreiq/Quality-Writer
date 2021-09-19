@@ -92,3 +92,7 @@ textarea {
 .bg-secondary-2 {
   background-color: #33495e !important;
 }
+
+p.post-content {
+  white-space: pre-line;
+}

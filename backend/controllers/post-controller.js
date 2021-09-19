@@ -8,7 +8,7 @@ const PostController = {
                 { title: { $regex: '.*' + search + '.*', $options: 'i' } },
                 { content: { $regex: '.*' + search + '.*', $options: 'i' } },
                 { topic: { $regex: '.*' + search + '.*', $options: 'i' } }]
-        });
+        }).sort({_id: -1});
         res.json(posts);
     },
     getAllPosts: async (req, res) => {

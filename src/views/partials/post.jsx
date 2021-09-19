@@ -6,10 +6,14 @@ class Post extends Component {
         textReduce: false
     }
 
+    postContent = React.createRef();
+
     seeMore = () => {
         this.setState({
             textReduce: true
         });
+        this.postContent.current.className += " post-content";
+        console.log(this.postContent.current.className);
     }
 
     render() {
@@ -22,7 +26,7 @@ class Post extends Component {
                         </h2>
                     </div>
                     <div className="card-body">
-                        <p className="card-text mb-0 text-justify">
+                        <p className="card-text mb-0 text-justify" ref={this.postContent}>
                             {this.props.post.content.length > 70 && !this.state.textReduce ?
                                 this.props.post.content.substring(0, 70) + '...' : this.props.post.content
                             }
