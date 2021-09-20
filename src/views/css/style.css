@@ -108,3 +108,7 @@ textarea {
 p.post-content {
   white-space: pre-line;
 }
+
+.title-posts {
+  text-transform: uppercase;
+}

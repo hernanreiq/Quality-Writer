@@ -39,14 +39,14 @@ class Post extends Component {
                     </div>
                     <div className="card-footer">
                         <h5 className="mb-0">
-                            <span className="badge badge-primary">
-                                <a href={'/' + this.props.post.topic} className="text-decoration-none text-white badge-url">
+                            {this.props.post.edited === true ?
+                                <span className="badge badge-secondary">Edited</span> : <span className="badge badge-success text-secondary">Original</span>
+                            }
+                            <span className="badge badge-primary ml-3">
+                                <a href={'/topic/' + this.props.post.topic.toLowerCase()} className="text-decoration-none text-white badge-url">
                                     {this.props.post.topic}
                                 </a>
                             </span>
-                            {this.props.post.edited === true ?
-                                <span className="badge badge-secondary ml-3">Edited</span> : <span className="badge badge-success text-dark ml-3">Original</span>
-                            }
                             <span className="badge badge-primary ml-3">
                                 {format(this.props.post.created_at, 'en_US')}
                             </span>

@@ -11,6 +11,11 @@ const PostController = {
         }).sort({_id: -1});
         res.json(posts);
     },
+    getTopic: async (req, res) => {
+        const topic = req.params.topic;
+        const posts = await PostModel.find({topic: {$regex: topic, $options: 'i'}}).sort({_id: -1});
+        res.json(posts);
+    },
     getAllPosts: async (req, res) => {
         const posts = await PostModel.find().sort({_id: -1});
         res.json(posts);

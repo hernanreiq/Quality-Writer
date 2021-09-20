@@ -7,7 +7,7 @@ class Nav extends Component {
             <React.Fragment>
                 <nav className="navbar navbar-expand-lg navbar-dark bg-primary shadow">
                     <div className="container">
-                        <NavLink to="/" className="navbar-brand"><i>Quality Writer</i></NavLink>
+                        <NavLink to="/home" className="navbar-brand"><i>Quality Writer</i></NavLink>
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
