@@ -12,7 +12,7 @@ class Index extends Component {
     }
 
     getAllPost = () => {
-        axios('http://localhost:3700/api/posts')
+        axios.get('http://localhost:3700/api/posts')
             .then(res => {
                 this.setState({
                     posts: res.data,
@@ -22,7 +22,7 @@ class Index extends Component {
     }
 
     render() {
-        if(!this.state.postsSearched){
+        if (!this.state.postsSearched) {
             this.getAllPost();
         }
         return (
@@ -39,12 +39,7 @@ class Index extends Component {
                                     <div className="card-body card-body-main">
                                         {
                                             this.state.posts.map((post, i) => {
-                                                return (
-                                                    <Post
-                                                        key={i}
-                                                        post={post}
-                                                    />
-                                                )
+                                                return (<Post key={i} post={post} />)
                                             })
                                         }
                                     </div>

@@ -16,8 +16,20 @@ code {
 }
 
 header {
-  height: 400px;
+  max-height: 450px;
   background-color: rgb(65, 65, 65);
+  background-image: url('../img/wallpaper.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.container-heading {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #1e1e1eb4;
+  padding: 30px 0;
+  border-radius: 5px;
+  border-bottom: 2px solid #ffffffb4;
 }
 
 .card-header-main, aside .card-header {
